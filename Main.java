@@ -7,5 +7,6 @@ public class Main{
         System.out.println("Enter your name: ");
         String name = scanner.nextLine();
         System.out.println("Hello " + name);
+        System.out.print("meki bau");
     }
 }

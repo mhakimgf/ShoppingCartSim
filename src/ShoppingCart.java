@@ -1,5 +1,5 @@
-import java.util.*;
-//singeton pattern
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingCart {
     private static ShoppingCart instance;

@@ -11,4 +11,9 @@ public class AddItemCommand implements Command {
     public void execute() {
         cart.addItem(item);
     }
+
+    @Override
+    public void undo() {
+        cart.removeItem(item);
+    }
 }

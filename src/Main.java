@@ -58,16 +58,19 @@ public class Main {
 
                 case 3:
                     System.out.println("Items in the cart:");
+                    System.out.println("---------------------");
                     for (Item item : cart.getItems()) {
                         item.display();
                     }
+
+                    System.out.println("---------------------");
                     break;
                 case 4:
 
                     commandManager.undoLastCommand();
                     break;
                 case 5:
-                
+
                     System.out.println("Exiting...");
                     scanner.close();
                     return;

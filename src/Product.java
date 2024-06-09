@@ -24,4 +24,9 @@ public class Product extends Item {
     public int hashCode() {
         return name != null ? name.hashCode() : 0;
     }
+
+    @Override
+    public String toString() {
+        return "Product: " + name;
+    }
 }

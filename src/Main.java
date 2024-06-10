@@ -8,11 +8,38 @@ public class Main {
         CommandManager commandManager = new CommandManager();
         Scanner scanner = new Scanner(System.in);
 
+        String[] foodItemsArr = new String[] { "Apple", "Banana", "Orange", "Strawberry", "Grapes",
+                                            "Watermelon", "Pineapple", "Mango", "Blueberry", "Kiwi",
+                                            "Peach", "Plum", "Cherry", "Avocado", "Lemon",
+                                            "Lime", "Pear", "Pomegranate", "Coconut", "Papaya" };
+
+        String[] furnitureItemsArr = new String[] { "Chair", "Table", "Sofa", "Bed", "Cabinet",
+                                                    "Desk", "Couch", "Dresser", "Bookshelf", "Wardrobe",
+                                                    "Coffee Table", "Nightstand", "Dining Table", "Stool", "Bench",
+                                                    "Armchair", "Recliner", "Chest of Drawers", "TV Stand", "Ottoman" };
+
+
+        
+
+        ProductCategory foodItems = new ProductCategory("Food");
+        for(String foodItem : foodItemsArr){
+            foodItems.add(new Product(foodItem));
+        }
+        
+        ProductCategory Furniture = new ProductCategory("Furniture");
+        for(String furnitureItem : furnitureItemsArr){
+            Furniture.add(new Product(furnitureItem));
+        }
+        
         List<Item> availableItems = new ArrayList<>();
+        for(int i = 0; i < foodItemsArr.length; i++){
+            availableItems.add(foodItems.getChild(i));
+        }
         availableItems.add(new Product("Shirt"));
         availableItems.add(new Product("Apple"));
         availableItems.add(new Product("Chair"));
         availableItems.add(new Product("Table"));
+
         
 
         while (true) {

@@ -41,6 +41,7 @@ public class Main {
         availableItems.add(new Product("Table"));
 
         
+        System.out.println("test");
 
         while (true) {
             System.out.println("1. Tambahkan Barang ke Keranjang");

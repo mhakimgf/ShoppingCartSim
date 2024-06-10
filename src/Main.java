@@ -48,7 +48,8 @@ public class Main {
             System.out.println("2. Keluarkan Barang dari Keranjang");
             System.out.println("3. Lihat isi Keranjang");
             System.out.println("4. Undo Command Terakhir");
-            System.out.println("5. Exit");
+            System.out.println("5. Redo Command Terakhir");
+            System.out.println("6. Exit");
             System.out.print("Pilih Aksi: ");
 
             int choice = scanner.nextInt();
@@ -101,11 +102,14 @@ public class Main {
                     break;
                 case 5:
 
+                    commandManager.redoLastCommand();
+                case 6:
                     System.out.println("Keluar dari aplikasi...");
                     scanner.close();
                     return;
                 default:
                     System.out.println("opsi tidak valid, coba lagi ");
+                
             }
         }
     }

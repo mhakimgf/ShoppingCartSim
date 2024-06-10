@@ -2,6 +2,7 @@ import java.util.Stack;
 
 public class CommandManager {
     private Stack<Command> commandStack = new Stack<>();
+    private Stack<Command> undoCommandStack= new Stack<>();
 
     public void executeCommand(Command command) {
         command.execute();
@@ -11,7 +12,17 @@ public class CommandManager {
     public void undoLastCommand() {
         if (!commandStack.isEmpty()) {
             Command lastCommand = commandStack.pop();
+            undoCommandStack.add(lastCommand);
             lastCommand.undo();
+        }
+    }
+
+    public void redoLastCommand(){
+        if(!undoCommandStack.isEmpty()){
+            Command lastUndoCommand = undoCommandStack.pop();
+            lastUndoCommand.redo();
+
+            
         }
     }
 }

@@ -16,4 +16,9 @@ public class RemoveItemCommand implements Command {
     public void undo() {    //jika melakukan undo maka akan mengembalikan barang yang sebelumnya diremove
         cart.addItem(item);
     }
+
+    @Override 
+    public void redo(){
+        cart.removeItem(item);
+    }
 }

@@ -103,6 +103,7 @@ public class Main {
                 case 5:
 
                     commandManager.redoLastCommand();
+                    break;
                 case 6:
                     System.out.println("Keluar dari aplikasi...");
                     scanner.close();

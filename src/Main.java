@@ -8,7 +8,6 @@ public class Main {
         ShoppingCart cart = ShoppingCart.getInstance();
         CommandManager commandManager = new CommandManager();
         Scanner scanner = new Scanner(System.in);
-        TreeSet<Item> foodItemsList = new TreeSet<Item>();
 
         String[] foodItemsArr = new String[] { 
             "Apple", "Banana", "Orange", "Strawberry", "Grapes",

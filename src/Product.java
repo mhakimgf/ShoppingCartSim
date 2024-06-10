@@ -31,6 +31,6 @@ public class Product extends Item {
 
     @Override
     public String toString() {
-        return "Product: " + name;
+        return "Product: " + name+", "+harga;
     }
 }

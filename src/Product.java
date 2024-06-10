@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 import java.util.Locale;
 
 public class Product extends Item {
@@ -11,8 +12,9 @@ public class Product extends Item {
 
     @Override
     public void display() {
-        System.out.println("Product: " + name+", "+harga);
-        
+        NumberFormat formatter = NumberFormat.getInstance(Locale.US);
+        String formattedHarga = formatter.format(harga);
+        System.out.println("Product: " + name + ", " + formattedHarga);
     }
 
     @Override

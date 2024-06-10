@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.List;
+import java.util.Locale;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class Main {
@@ -118,7 +120,10 @@ public class Main {
                     for (Item item : cart.getItems()) {
                         item.display();
                     }
-                    System.out.println(ColorConsole.GREEN +"Total Harga: "+cart.getTotalPrice()+ ColorConsole.RESET);
+                    
+                    NumberFormat formatter = NumberFormat.getInstance(Locale.US);
+                    String formattedTotalPrice = formatter.format(cart.getTotalPrice());
+                    System.out.println(String.format(Locale.US, ColorConsole.GREEN + "Total Harga: " + formattedTotalPrice + ColorConsole.RESET));
 
                     System.out.println("---------------------");
                     break;

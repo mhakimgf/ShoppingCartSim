@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.TreeSet;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -83,7 +82,7 @@ public class Main {
                 case 1:
                     System.out.println("Item yang tersedia:");
                     for (int i = 0; i < availableItems.size(); i++) {
-                        System.out.println((i + 1) + ". " + availableItems.get(i).toString());
+                        System.out.println(String.format("%-2d. %s", (i + 1), availableItems.get(i).toString()));
                     }
                     System.out.print("Masukkan nomor item yang ingin dimasukkan: ");
                     int addItemIndex = scanner.nextInt() - 1;

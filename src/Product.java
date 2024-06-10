@@ -1,3 +1,4 @@
+import java.util.Locale;
 
 public class Product extends Item {
     private String name;
@@ -31,6 +32,7 @@ public class Product extends Item {
 
     @Override
     public String toString() {
-        return "Product: " + name+", "+harga;
+        String s = String.format(Locale.US, "%-13s : %,.0f", name, harga);
+        return s;
     }
 }

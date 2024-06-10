@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.TreeSet;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -119,7 +118,7 @@ public class Main {
                     for (Item item : cart.getItems()) {
                         item.display();
                     }
-                    System.out.println("Total Harga: "+cart.getTotalPrice());
+                    System.out.println(ColorConsole.GREEN +"Total Harga: "+cart.getTotalPrice()+ ColorConsole.RESET);
 
                     System.out.println("---------------------");
                     break;

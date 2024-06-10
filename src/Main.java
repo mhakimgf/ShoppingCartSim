@@ -14,50 +14,50 @@ public class Main {
         availableItems.add(new Product("Chair"));
 
         while (true) {
-            System.out.println("1. Add item to cart");
-            System.out.println("2. Remove item from cart");
-            System.out.println("3. View cart");
-            System.out.println("4. Undo last operation");
+            System.out.println("1. Tambahkan Barang ke Keranjang");
+            System.out.println("2. Keluarkan Barang dari Keranjang");
+            System.out.println("3. Lihat isi Keranjang");
+            System.out.println("4. Undo Command Terakhir");
             System.out.println("5. Exit");
-            System.out.print("Choose an option: ");
+            System.out.print("Pilih Aksi: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // consume newline character
 
             switch (choice) {
                 case 1:
-                    System.out.println("Available items to add:");
+                    System.out.println("Item yang tersedia:");
                     for (int i = 0; i < availableItems.size(); i++) {
                         System.out.println((i + 1) + ". " + availableItems.get(i).toString());
                     }
-                    System.out.print("Enter the number of the item to add: ");
+                    System.out.print("Masukkan nomor item yang ingin dimasukkan: ");
                     int addItemIndex = scanner.nextInt() - 1;
                     if (addItemIndex >= 0 && addItemIndex < availableItems.size()) {
                         Command addItemCommand = new AddItemCommand(cart, availableItems.get(addItemIndex));
                         commandManager.executeCommand(addItemCommand);
                     } else {
-                        System.out.println("Invalid selection.");
+                        System.out.println("Pilihan tidak ada.");
                     }
                     break;
 
                 case 2:
-                    System.out.println("Items in the cart to remove:");
+                    System.out.println("Item yang ada di cart untuk dikeluarkan:");
                     List<Item> cartItems = cart.getItems();
                     for (int i = 0; i < cartItems.size(); i++) {
                         System.out.println((i + 1) + ". " + cartItems.get(i).toString());
                     }
-                    System.out.print("Enter the number of the item to remove: ");
+                    System.out.print("Masukkan nomor item yang ingin dikeluarkan: ");
                     int removeItemIndex = scanner.nextInt() - 1;
                     if (removeItemIndex >= 0 && removeItemIndex < cartItems.size()) {
                         Command removeItemCommand = new RemoveItemCommand(cart, cartItems.get(removeItemIndex));
                         commandManager.executeCommand(removeItemCommand);
                     } else {
-                        System.out.println("Invalid selection.");
+                        System.out.println("Pilihan Tidak Ada.");
                     }
                     break;
 
                 case 3:
-                    System.out.println("Items in the cart:");
+                    System.out.println("Item di Keranjang:");
                     System.out.println("---------------------");
                     for (Item item : cart.getItems()) {
                         item.display();

@@ -73,11 +73,11 @@ public class Main {
                     break;
                 case 5:
 
-                    System.out.println("Exiting...");
+                    System.out.println("Keluar dari aplikasi...");
                     scanner.close();
                     return;
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    System.out.println("opsi tidak valid, coba lagi ");
             }
         }
     }

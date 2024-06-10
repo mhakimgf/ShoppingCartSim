@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.TreeSet;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -7,38 +8,62 @@ public class Main {
         ShoppingCart cart = ShoppingCart.getInstance();
         CommandManager commandManager = new CommandManager();
         Scanner scanner = new Scanner(System.in);
+        TreeSet<Item> foodItemsList = new TreeSet<Item>();
 
-        String[] foodItemsArr = new String[] { "Apple", "Banana", "Orange", "Strawberry", "Grapes",
-                                            "Watermelon", "Pineapple", "Mango", "Blueberry", "Kiwi",
-                                            "Peach", "Plum", "Cherry", "Avocado", "Lemon",
-                                            "Lime", "Pear", "Pomegranate", "Coconut", "Papaya" };
+        String[] foodItemsArr = new String[] { 
+            "Apple", "Banana", "Orange", "Strawberry", "Grapes",
+            "Watermelon", "Pineapple", "Mango", "Blueberry", "Kiwi",
+            "Peach", "Plum", "Cherry", "Avocado", "Lemon",
+            "Lime", "Pear", "Pomegranate", "Coconut", "Papaya" 
+        };
 
-        String[] furnitureItemsArr = new String[] { "Chair", "Table", "Sofa", "Bed", "Cabinet",
-                                                    "Desk", "Couch", "Dresser", "Bookshelf", "Wardrobe",
-                                                    "Coffee Table", "Nightstand", "Dining Table", "Stool", "Bench",
-                                                    "Armchair", "Recliner", "Chest of Drawers", "TV Stand", "Ottoman" };
+        // Harga untuk setiap item makanan dalam foodItemsArr
+        double[] foodItemsPrice = new double[] { 
+            12000, 13000, 14000, 9000, 15000,
+            20000, 25000, 18000, 22000, 17000,
+            14000, 16000, 19000, 21000, 11000,
+            12000, 13000, 24000, 26000, 23000 
+        };
+
+        String[] furnitureItemsArr = new String[] { 
+            "Chair", "Table", "Sofa", "Bed", "Cabinet",
+            "Desk", "Couch", "Dresser", "Bookshelf", "Wardrobe",
+            "Coffee Table", "Nightstand", "Dining Table", "Stool", "Bench",
+            "Armchair", "Recliner", "Chest of Drawers", "TV Stand", "Ottoman" 
+        };
+
+        // Harga untuk setiap item furnitur dalam furnitureItemsArr
+        double[] furnitureItemsPrice = new double[] { 
+            500000, 1500000, 3000000, 2000000, 1200000,
+            1000000, 2500000, 1800000, 900000, 2200000,
+            800000, 700000, 2500000, 400000, 600000,
+            1000000, 1500000, 2000000, 1100000, 900000 
+        };
 
 
         
 
         ProductCategory foodItems = new ProductCategory("Food");
-        for(String foodItem : foodItemsArr){
-            foodItems.add(new Product(foodItem));
+        for(int i = 0; i < foodItemsArr.length; i++){
+            foodItems.add(new Product(foodItemsArr[i], foodItemsPrice[i]));
         }
         
         ProductCategory Furniture = new ProductCategory("Furniture");
-        for(String furnitureItem : furnitureItemsArr){
-            Furniture.add(new Product(furnitureItem));
+        for(int i = 0; i < furnitureItemsArr.length; i++){
+            Furniture.add(new Product(furnitureItemsArr[i], furnitureItemsPrice[i]));
         }
         
         List<Item> availableItems = new ArrayList<>();
+        //menyimpan item Food yang tersedia
         for(int i = 0; i < foodItemsArr.length; i++){
             availableItems.add(foodItems.getChild(i));
         }
-        availableItems.add(new Product("Shirt"));
-        availableItems.add(new Product("Apple"));
-        availableItems.add(new Product("Chair"));
-        availableItems.add(new Product("Table"));
+        //meynipan item Furniture yang tersedia
+        for(int i = 0; i < furnitureItemsArr.length; i++){
+            availableItems.add(Furniture.getChild(i));
+        }
+
+      
 
         
         System.out.println("test");

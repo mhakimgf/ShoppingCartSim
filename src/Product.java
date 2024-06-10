@@ -1,14 +1,17 @@
 
 public class Product extends Item {
     private String name;
+    private double harga;
 
-    public Product(String name) {
+    public Product(String name,double harga) {
         this.name = name;
+        this.harga = harga;
     }
 
     @Override
     public void display() {
-        System.out.println("Product: " + name);
+        System.out.println("Product: " + name+", "+harga);
+        
     }
 
     @Override

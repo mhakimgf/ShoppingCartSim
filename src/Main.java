@@ -71,6 +71,7 @@ public class Main {
         System.out.println("test");
 
         while (true) {
+            System.out.println(ColorConsole.BLUE + "Selamat datang di Toko Online" + ColorConsole.RESET);
             System.out.println("1. Tambahkan Barang ke Keranjang");
             System.out.println("2. Keluarkan Barang dari Keranjang");
             System.out.println("3. Lihat isi Keranjang");
@@ -120,7 +121,7 @@ public class Main {
                     for (Item item : cart.getItems()) {
                         item.display();
                     }
-                    
+
                     NumberFormat formatter = NumberFormat.getInstance(Locale.US);
                     String formattedTotalPrice = formatter.format(cart.getTotalPrice());
                     System.out.println(String.format(Locale.US, ColorConsole.GREEN + "Total Harga: " + formattedTotalPrice + ColorConsole.RESET));

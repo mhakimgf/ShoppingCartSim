@@ -35,4 +35,9 @@ public class Product extends Item {
         String s = String.format(Locale.US, "%-13s : %,.0f", name, harga);
         return s;
     }
+    
+    public double getPrice() {
+        return harga;
+    }
+    
 }

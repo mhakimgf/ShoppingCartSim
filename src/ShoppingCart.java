@@ -27,4 +27,15 @@ public class ShoppingCart {
     public List<Item> getItems() {
         return items;
     }
+    
+    public double getTotalPrice() {
+        double totalPrice = 0;
+        for (Item item : items) {
+            if (item instanceof Product) {
+                totalPrice += ((Product) item).getPrice();
+            }
+        }
+        return totalPrice;
+    }
+    
 }

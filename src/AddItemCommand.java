@@ -1,3 +1,5 @@
+//concreate command class
+
 public class AddItemCommand implements Command {
     private ShoppingCart cart;
     private Item item;

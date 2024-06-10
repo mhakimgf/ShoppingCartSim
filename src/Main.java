@@ -12,6 +12,8 @@ public class Main {
         availableItems.add(new Product("Shirt"));
         availableItems.add(new Product("Apple"));
         availableItems.add(new Product("Chair"));
+        availableItems.add(new Product("Table"));
+        
 
         while (true) {
             System.out.println("1. Tambahkan Barang ke Keranjang");

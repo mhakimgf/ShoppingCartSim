@@ -3,16 +3,17 @@
 
 public abstract class Item {
     public void add(Item item) {
-        throw new UnsupportedOperationException();
-    }
-
-    public void remove(Item item) {
-        throw new UnsupportedOperationException();
-    }
-
-    public Item getChild(int i) {
-        throw new UnsupportedOperationException();
-    }
+        System.out.println("Action belum di implementasi");
+        }
+        
+        public void remove(Item item) {
+            System.out.println("Action belum di implementasi");
+        }
+            
+        public Item getChild(int i) {
+            System.out.println("Action belum di implementasi");
+            return null;
+        }
 
     public abstract void display();
 }

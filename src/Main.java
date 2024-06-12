@@ -81,22 +81,44 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.println();
-                    System.out.println("Item yang tersedia:");
-                    for (int i = 0; i < availableItems.size(); i++) {
-                        System.out.println((i + 1) + ". " + availableItems.get(i).toString());
-                    }
-                    System.out.println();
-                    System.out.print("Masukkan nomor item yang ingin dimasukkan: ");
-                    int addItemIndex = scanner.nextInt() - 1;
-                    if (addItemIndex >= 0 && addItemIndex < availableItems.size()) {
-                        Command addItemCommand = new AddItemCommand(cart, availableItems.get(addItemIndex));
-                        commandManager.executeCommand(addItemCommand);
-                    } else {
-                        System.out.println("Pilihan tidak ada.");
-                    }
-                    System.out.println();
+                System.out.println();
+                System.out.println("Pilih kategori:");
+                System.out.println("1. Food");
+                System.out.println("2. Furniture");
+                System.out.print("Masukkan nomor kategori: ");
+                int categoryChoice = scanner.nextInt();
+                scanner.nextLine(); // consume newline character
+            
+                List<Item> selectedCategoryItems = new ArrayList<>();
+                String selectedCategoryName = "";
+            
+                if (categoryChoice == 1) {
+                    selectedCategoryItems = foodItems.getItems();
+                    selectedCategoryName = "Food";
+                } else if (categoryChoice == 2) {
+                    selectedCategoryItems = Furniture.getItems();
+                    selectedCategoryName = "Furniture";
+                } else {
+                    System.out.println("Kategori tidak valid.");
                     break;
+                }
+            
+                System.out.println();
+                System.out.println("Item yang tersedia dalam kategori " + selectedCategoryName + ":");
+                for (int i = 0; i < selectedCategoryItems.size(); i++) {
+                    System.out.println((i + 1) + ". " + selectedCategoryItems.get(i).toString());
+                }
+                System.out.println();
+                System.out.print("Masukkan nomor item yang ingin dimasukkan: ");
+                int addItemIndex = scanner.nextInt() - 1;
+                if (addItemIndex >= 0 && addItemIndex < selectedCategoryItems.size()) {
+                    Command addItemCommand = new AddItemCommand(cart, selectedCategoryItems.get(addItemIndex));
+                    commandManager.executeCommand(addItemCommand);
+                } else {
+                    System.out.println("Pilihan tidak ada.");
+                }
+                System.out.println();
+                break;
 
                 case 2:
                     System.out.println();

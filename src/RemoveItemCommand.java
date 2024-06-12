@@ -1,3 +1,5 @@
+//conrete command untuk fitur remove item
+
 public class RemoveItemCommand implements Command {
     private ShoppingCart cart;
     private Item item;

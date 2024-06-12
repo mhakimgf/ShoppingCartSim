@@ -10,12 +10,12 @@ public class AddItemCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute() {//melakukan execute command add
         cart.addItem(item);
     }
 
     @Override
-    public void undo() {
+    public void undo() {//melakukan undo dengan remove item
         cart.removeItem(item);
     }
 

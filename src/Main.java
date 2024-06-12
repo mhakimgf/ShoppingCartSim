@@ -31,7 +31,7 @@ public class Main {
             "Chair", "Table", "Sofa", "Bed", "Cabinet",
             "Desk", "Couch", "Dresser", "Bookshelf", "Wardrobe",
             "Coffee Table", "Nightstand", "Dining Table", "Stool", "Bench",
-            "Armchair", "Recliner", "Chest of Drawers", "TV Stand", "Ottoman" 
+            "Armchair", "Recliner", "Drawers", "TV Stand", "Ottoman" 
         };
 
         // Harga untuk setiap item furnitur dalam furnitureItemsArr

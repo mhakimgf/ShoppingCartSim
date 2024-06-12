@@ -1,8 +1,8 @@
-import java.util.Scanner;
-import java.util.List;
-import java.util.Locale;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -65,11 +65,6 @@ public class Main {
             availableItems.add(Furniture.getChild(i));
         }
 
-      
-
-        
-        System.out.println("test");
-
         while (true) {
             System.out.println(ColorConsole.BLUE + "Selamat datang di Toko Online" + ColorConsole.RESET);
             System.out.println("1. Tambahkan Barang ke Keranjang");
@@ -78,6 +73,7 @@ public class Main {
             System.out.println("4. Undo Command Terakhir");
             System.out.println("5. Redo Command Terakhir");
             System.out.println("6. Exit");
+            System.out.println();
             System.out.print("Pilih Aksi: ");
 
             int choice = scanner.nextInt();
@@ -85,10 +81,12 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    System.out.println();
                     System.out.println("Item yang tersedia:");
                     for (int i = 0; i < availableItems.size(); i++) {
                         System.out.println((i + 1) + ". " + availableItems.get(i).toString());
                     }
+                    System.out.println();
                     System.out.print("Masukkan nomor item yang ingin dimasukkan: ");
                     int addItemIndex = scanner.nextInt() - 1;
                     if (addItemIndex >= 0 && addItemIndex < availableItems.size()) {
@@ -97,14 +95,17 @@ public class Main {
                     } else {
                         System.out.println("Pilihan tidak ada.");
                     }
+                    System.out.println();
                     break;
 
                 case 2:
+                    System.out.println();
                     System.out.println("Item yang ada di cart untuk dikeluarkan:");
                     List<Item> cartItems = cart.getItems();
                     for (int i = 0; i < cartItems.size(); i++) {
                         System.out.println((i + 1) + ". " + cartItems.get(i).toString());
                     }
+                    System.out.println();
                     System.out.print("Masukkan nomor item yang ingin dikeluarkan: ");
                     int removeItemIndex = scanner.nextInt() - 1;
                     if (removeItemIndex >= 0 && removeItemIndex < cartItems.size()) {
@@ -116,6 +117,7 @@ public class Main {
                     break;
 
                 case 3:
+                    System.out.println();
                     System.out.println("Item di Keranjang:");
                     System.out.println("---------------------");
                     for (Item item : cart.getItems()) {
@@ -127,16 +129,20 @@ public class Main {
                     System.out.println(String.format(Locale.US, ColorConsole.GREEN + "Total Harga: " + formattedTotalPrice + ColorConsole.RESET));
 
                     System.out.println("---------------------");
+                    System.out.println();
                     break;
                 case 4:
-
                     commandManager.undoLastCommand();
+                    System.out.println("Undo berhasil dilakukan");
+                    System.out.println();
                     break;
                 case 5:
-
                     commandManager.redoLastCommand();
+                    System.out.println("Redo berhasil dilakukan");
+                    System.out.println();
                     break;
                 case 6:
+                    System.out.println();
                     System.out.println("Keluar dari aplikasi...");
                     scanner.close();
                     return;

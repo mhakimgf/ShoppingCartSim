@@ -55,15 +55,6 @@ public class Main {
             Furniture.add(new Product(furnitureItemsArr[i], furnitureItemsPrice[i]));
         }
         
-        List<Item> availableItems = new ArrayList<>();
-        //menyimpan item Food yang tersedia
-        for(int i = 0; i < foodItemsArr.length; i++){
-            availableItems.add(foodItems.getChild(i));
-        }
-        //meynipan item Furniture yang tersedia
-        for(int i = 0; i < furnitureItemsArr.length; i++){
-            availableItems.add(Furniture.getChild(i));
-        }
 
         while (true) {
             System.out.println(ColorConsole.BLUE + "Selamat datang di Toko Online" + ColorConsole.RESET);

@@ -22,6 +22,7 @@ public class ProductCategory extends Item {
     public Item getChild(int i) {
         return items.get(i);
     }
+    
     public List<Item> getItems(){
         return items;
     }
